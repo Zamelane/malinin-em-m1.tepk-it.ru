@@ -21,7 +21,7 @@
         <h1>Мастер пол</h1>
     </a>
     <nav class="flex gap6">
-{{--        <a class="btn" href="{{ route('products.index') }}">Продукты</a>--}}
+        <a class="btn" href="{{ route('page1.index') }}">Page1</a>
 {{--        <a class="btn" href="{{ route('partners.index') }}">Партнёры</a>--}}
     </nav>
 </header>
