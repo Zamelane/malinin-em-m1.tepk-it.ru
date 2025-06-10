@@ -20,7 +20,7 @@ class ProductController extends Controller
             ->addSelect([
                 'total_cost' => DB::table('product_materials')
                     ->join('materials', 'materials.id', '=', 'product_materials.material_id')
-                    // Считаем, округляем и по умолчанию ставим 0 (в случае отсутствия)
+                    // Считаем, округляем до сотых и по умолчанию ставим 0 (в случае отсутствия материалов)
                     ->selectRaw('ROUND(GREATEST(COALESCE(SUM(product_materials.quantity * materials.price), 0), 0), 2)')
                     ->whereColumn('product_materials.product_id', 'products.id')
             ])
@@ -42,9 +42,10 @@ class ProductController extends Controller
     /**
      * Создаёт новый продукт в базе данных.
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        Product::create($request->validated());
+        return redirect()->route('products.index');
     }
 
     /**

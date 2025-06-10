@@ -17,7 +17,7 @@
 <body>
 <header class="flex justify-center items-center">
     <div class="between header items-center">
-        <a class="flex items-center gap-6 logo-title" href="{{ route('home') }}">
+        <a class="flex items-center gap-6 logo-title underline" href="{{ route('home') }}">
             <img src="{{ asset('assets/logo/logo.png') }}" alt="Лого" width="75" height="75">
             <h1>Наш декор</h1>
         </a>
@@ -34,7 +34,7 @@
             <div>
                 <h2 class="text-h line-height-1">@yield('title', '')</h2>
                 @hasSection('back')
-                    <a class="link text-lg" href="@yield('back')">Назад</a>
+                    <a class="btn text-lg" href="@yield('back')">Назад</a>
                 @endif
             </div>
             <div class="buttons flex gap-6">

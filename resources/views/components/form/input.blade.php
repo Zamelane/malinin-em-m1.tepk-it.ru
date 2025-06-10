@@ -13,7 +13,6 @@
 @php
     $placeholder ??= $label;
 @endphp
-
 <div class="form-item">
     <label for="{{ $name }}">{{ $label }}</label>
     <input
