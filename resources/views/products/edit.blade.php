@@ -38,7 +38,7 @@
             :value="$product->minPrice"
             label="Минимальная стоимость (руб.)"
             min="0"
-            max="99999"
+            max="9999999999999999.99"
             step="0.01"
             required
         />
@@ -49,7 +49,7 @@
             :value="$product->width"
             label="Ширина (м)"
             min="0.01"
-            max="99999"
+            max="9999999999999999.99"
             step="0.01"
             required
         />

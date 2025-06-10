@@ -4,7 +4,7 @@
 
 @section('content')
     <form
-        action="{{ route('products.create') }}"
+        action="{{ route('products.store') }}"
         method="post"
         enctype="application/x-www-form-urlencoded">
         @csrf
@@ -33,7 +33,7 @@
             type="number"
             label="Минимальная стоимость (руб.)"
             min="0"
-            max="99999"
+            max="9999999999999999.99"
             step="0.01"
             required
         />
@@ -43,11 +43,11 @@
             type="number"
             label="Ширина (м)"
             min="0.01"
-            max="99999"
+            max="9999999999999999.99"
             step="0.01"
             required
         />
 
-        <button type="submit" class="btn">Создать</button>
+        <button type="submit" class="btn">Добавить</button>
     </form>
 @endsection
