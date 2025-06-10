@@ -14,4 +14,19 @@ class Product extends Model
         'minPrice',
         'width'
     ];
+
+    public function productType()
+    {
+        return $this->belongsTo(ProductType::class);
+    }
+    public function productMaterials()
+    {
+        return $this->hasMany(ProductMaterial::class);
+    }
+
+    public function materials()
+    {
+        return $this->belongsToMany(Material::class, 'product_materials')
+            ->withPivot('quantity');
+    }
 }

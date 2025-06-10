@@ -17,7 +17,15 @@ class Material extends Model
         'unit_id'
     ];
 
-    public function materialType() {
+    // Связь с сущностью единицы измерения
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class);
+    }
+
+    // Связь с сущностью типа материала
+    public function materialType()
+    {
         return $this->belongsTo(MaterialType::class);
     }
 }

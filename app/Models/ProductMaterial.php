@@ -7,9 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class ProductMaterial extends Model
 {
     public $timestamps = false;
-    protected $fillable = [
+    public $fillable = [
         'product_id',
         'material_id',
         'quantity'
     ];
+
+    public function material()
+    {
+        return $this->belongsTo(Material::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
