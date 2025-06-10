@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Отображение списка продуктов.
      */
     public function index()
     {
@@ -30,7 +30,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Отображение формы создания нового продукта.
      */
     public function create()
     {
@@ -40,7 +40,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Создаёт новый продукт в базе данных.
      */
     public function store(Request $request)
     {
@@ -48,7 +48,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Отображает лайаут с подробной информацией о продукте.
      */
     public function show(Product $product)
     {
@@ -56,7 +56,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Отображает форму для редактирования продукта.
      */
     public function edit(Product $product)
     {
@@ -66,7 +66,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Обновление продукта в базе данных.
      */
     public function update(ProductRequest $request, Product $product)
     {
