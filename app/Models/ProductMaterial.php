@@ -13,11 +13,13 @@ class ProductMaterial extends Model
         'quantity'
     ];
 
+    // Связываемся с сущностью материала
     public function material()
     {
         return $this->belongsTo(Material::class);
     }
 
+    // Связываемся с сущностью продукта
     public function product()
     {
         return $this->belongsTo(Product::class);

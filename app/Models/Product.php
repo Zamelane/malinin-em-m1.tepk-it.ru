@@ -15,15 +15,19 @@ class Product extends Model
         'width'
     ];
 
+    // Связь с сущностью типа продукта
     public function productType()
     {
         return $this->belongsTo(ProductType::class);
     }
+
+    // Связь с сущностями материалов продукта (1 ко многим)
     public function productMaterials()
     {
         return $this->hasMany(ProductMaterial::class);
     }
 
+    // Pivot для подсчёта количества
     public function materials()
     {
         return $this->belongsToMany(Material::class, 'product_materials')
